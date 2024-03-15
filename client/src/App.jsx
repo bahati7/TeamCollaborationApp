@@ -4,9 +4,9 @@ import {Chat} from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
 
-//import {ChanellContainer, ChanellListContainer} from './components';
-import ChanellContainer  from './components/ChanellContainer';
-import ChanellListContainer  from './components/ChanellContainer';
+import {ChanellContainer, ChanellListContainer} from './components';
+// import ChanellContainer  from './components/ChanellContainer';
+// import ChanellListContainer  from './components/ChanellContainer';
 
 
 import './App.css';
