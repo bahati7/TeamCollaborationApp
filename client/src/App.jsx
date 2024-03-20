@@ -5,8 +5,7 @@ import Cookies from 'universal-cookie';
 
 
 import {ChanellContainer, ChanellListContainer} from './components';
-// import ChanellContainer  from './components/ChanellContainer';
-// import ChanellListContainer  from './components/ChanellContainer';
+
 
 
 import './App.css';
