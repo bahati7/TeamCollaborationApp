@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Cookies from 'universal-cookie';
 import axios  from "axios";
 
-import signinImage from '../assets/signup.jpg';
+
 
 const cookies = new Cookies();
 
@@ -50,97 +50,103 @@ const Auth = () => {
         setSignup((prev)=>!prev);
     }
   return (
-    <div className='auth__form-container'>
-        <div className='auth__form-container_fields'>
+    <div className='min-h-screen flex flex-row'>
+        <div className='flex flex-col justify-center p-8 bg-orange-600'>
          
-            <div className='auth__form-container_fields-content'>
-                <p>{isSignup? 'Sign Up' : 'Sign In'}</p>
+            <div className='flex flex-col justify-start p-8 rounded bg-white'>
+                <p className='text-2xl text-gray-800 font-black'>{isSignup? 'Sign Up' : 'Sign In'}</p>
                 <form onSubmit={handleSubmit}>
                     {isSignup && (
-                        <div className='auth__form-container_fields-content_input'>
-                            <label htmlFor='fullName'>Full Name</label>
+                        <div className='flex flex-col relative my-[1rem] mx-[0rem]'>
+                            <label className='mb-2 text-gray-700 text-xs' htmlFor='fullName'>Full Name</label>
                             <input
                                  type="text"
                                   name='fullName' 
                                   placeholder='Full Name'
                                   onChange={handleChange}
+                                  className='rounded text-sm py-[0.55rem] px-[0.4rem] border  border-black outline-none bg-white w-[85%]'
                                   required
                             />
                         </div>
 
                     )}
-                     <div className='auth__form-container_fields-content_input'>
-                            <label htmlFor='username'>User Name</label>
+                     <div className='flex flex-col relative my-[1rem] mx-[0rem]'>
+                            <label className='mb-2 text-gray-700 text-xs' htmlFor='username'>User Name</label>
                             <input
                                  type="text"
                                   name='username' 
                                   placeholder='User Name'
                                   onChange={handleChange}
+                                  className='rounded text-sm py-[0.55rem] px-[0.4rem] border  border-black outline-none bg-white w-[85%]'
                                   required
                             />
                     </div>
                     {isSignup && (
-                        <div className='auth__form-container_fields-content_input'>
-                            <label htmlFor='phoneNumber'>Phone Number</label>
+                        <div className='flex flex-col relative my-[1rem] mx-[0rem]'>
+                            <label className='mb-2 text-gray-700 text-xs' htmlFor='phoneNumber'>Phone Number</label>
                             <input
                                  type="text"
                                   name='phoneNumber' 
                                   placeholder='Phone Number'
                                   onChange={handleChange}
+                                  className='rounded text-sm py-[0.55rem] px-[0.4rem] border  border-black outline-none bg-white w-[85%]'
                                   required
                             />
                         </div>
 
                     )}
                     {isSignup && (
-                        <div className='auth__form-container_fields-content_input'>
-                            <label htmlFor='avatarURL'>Avatar URL</label>
+                        <div className='flex flex-col relative my-[1rem] mx-[0rem]'>
+                            <label className='mb-2 text-gray-700 text-xs' htmlFor='avatarURL'>Avatar URL</label>
                             <input
                                  type="text"
                                   name='avatarURL' 
                                   placeholder='Avatar URL'
                                   onChange={handleChange}
+                                  className='rounded text-sm py-[0.55rem] px-[0.4rem] border  border-black outline-none bg-white w-[85%]'
                                   required
                             />
                         </div>
 
                     )}
-                     <div className='auth__form-container_fields-content_input'>
-                            <label htmlFor='password'>Password</label>
+                     <div className='flex flex-col relative my-[1rem] mx-[0rem]'>
+                            <label className='mb-2 text-gray-700 text-xs' htmlFor='password'>Password</label>
                             <input
                                  type="password"
                                   name='password' 
                                   placeholder='Password'
                                   onChange={handleChange}
+                                  className='rounded text-sm py-[0.55rem] px-[0.4rem] border  border-black outline-none bg-white w-[85%]'
                                   required
                             />
                     </div>
                     {isSignup && (
-                        <div className='auth__form-container_fields-content_input'>
-                                <label htmlFor='confirmPassword'>Confirm Password</label>
+                        <div className='flex flex-col relative my-[1rem] mx-[0rem]'>
+                                <label className='mb-2 text-gray-700 text-xs' htmlFor='confirmPassword'>Confirm Password</label>
                                 <input
                                         type="password"
                                         name='confirmPassword' 
                                         placeholder='Confirm Password'
                                         onChange={handleChange}
+                                        className='placeholder:text-gray-500 placeholder:w-full rounded text-sm py-[0.55rem] px-[0.4rem] border  border-black outline-none bg-white w-[85%]'
                                         required
                                 />
                         </div>
 
                     )}
-                    <div className='auth__form-container_fields-content_button'>
-                        <button>{isSignup ? "Sign Up" : "Log In"}</button>
+                    <div className='mt-8 flex justify-start'>
+                        <button className='rounded bg-orange-600 py-[0.7rem] px-[1.2rem] text-white font-medium cursor-pointer'>{isSignup ? "Sign Up" : "Log In"}</button>
 
                     </div>
                 </form>
-                <div className='auth__form-container_fields-account'>
+                <div className='flex justify-start items-center mt-1'>
                     <p>
                         {
                             isSignup
                             ?   `Already have an account?`
                             :   'Don’t have an account?'
                         }
-                        <span  onClick={switchMode}>
+                        <span className='cursor-pointer'  onClick={switchMode}>
                             {isSignup ? 'Sign In':'Sign  Up'}
 
                         </span>
