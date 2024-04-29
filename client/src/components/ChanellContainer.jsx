@@ -8,7 +8,7 @@ const ChanellContainer = ({isCreating,setIsCreating,isEditing,setIsEditing,creat
 
   if(isCreating){
     return(
-        <div className='channel__container'>
+        <div className='h-full w-full'>
           <CreateChannel createType={createType} setIsCreating={setIsCreating}/>
 
         </div>
@@ -16,7 +16,7 @@ const ChanellContainer = ({isCreating,setIsCreating,isEditing,setIsEditing,creat
   }
   if(isEditing){
     return(
-        <div className='channel__container'>
+        <div className='h-full w-full'>
           <EditChannel setIsEditing={setIsEditing}/>
 
         </div>
@@ -33,7 +33,7 @@ const ChanellContainer = ({isCreating,setIsCreating,isEditing,setIsEditing,creat
   }
 
   return (
-    <div className='channel__container'>
+    <div className='h-full w-full'>
         <Channel
           EmptyStateIndicator={EmptyState}
           Message={(messageProps,i)=> <MessageSimple key={i} {...messageProps} />}
